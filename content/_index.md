@@ -28,6 +28,7 @@ Hello there, I'm Yashasva. Through documentation I wish to expand this space. An
   - [Here's the gist](/tech/gists) - a galaxy full of my public gists.
   - [projects](/tech/projects) - a repo of my work
   - [notebook](/tech/notebook) - learnings in a nutshell
+  - [CHANGELOG.md](/tech/CHANGELOG) - my daily tech updates
 
 
 
