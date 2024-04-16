@@ -2,6 +2,10 @@
     title: CHANGELOG
 ---
 
+### 24.4.15
+  1. Mostly been studying Probability since a couple of days. I had midterms of MIT 6.431x which I submitted yesterday.
+  2. Working on analyzing ssl benchmarks for tls/crypto lib in go. Will explore to improve performance. 
+
 ### 24.4.12
   1. Read about SSL performance testing in go. Few resources helped me understand benchmarking in go and so I wrote simple benchmarks for SSL performance. 
   2. Read about go concurrency and it helped me handle/close resources in my benchmarks.
