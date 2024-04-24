@@ -2,6 +2,10 @@
     title: CHANGELOG
 ---
 
+### 24.4.24
+  1. Rewritten benchmarks to run on tls decryption only and remove other processes.
+  2. Completed another unit of MIT 6.431x: Probability.
+
 ### 24.4.15
   1. Mostly been studying Probability since a couple of days. I had midterms of MIT 6.431x which I submitted yesterday.
   2. Working on analyzing ssl benchmarks for tls/crypto lib in go. Will explore to improve performance. 

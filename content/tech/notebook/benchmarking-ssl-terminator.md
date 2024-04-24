@@ -60,3 +60,19 @@ go test -bench . -benchmem
 
 The results obtained for the execution of Handshake are ~0.9ms which is close to the openSSL benchmarks of 0.2ms.
 
+Remember, any operation here does not affect the load on the downstream servers. SSL/TLS termination has been completely offloaded to a proxy server exposed directly to the client. Any further optimiZations we do, improve the overall latency of the request and do not affect the downstream servers.
+
+Let's look at the benchmarks from the official go benchmarks [[https://go-review.googlesource.com/c/go/+/44730/4](3)]. 
+
+```
+    crypto/tls: add BenchmarkHandshakeServer
+
+    name                                       time/op
+    HandshakeServer/RSA-4                      1.10ms ± 0%
+    HandshakeServer/ECDHE-P256-RSA-4           1.23ms ± 1%
+    HandshakeServer/ECDHE-P256-ECDSA-P256-4     178µs ± 1%
+    HandshakeServer/ECDHE-X25519-ECDSA-P256-4   180µs ± 2%
+    HandshakeServer/ECDHE-P521-ECDSA-P521-4    19.8ms ± 1%
+```
+This suggests something is wrong, our time calculated for Handshake is 5-6x slower. What I want to do next is isolate the Handshake function and let Go do the benchmarking instead of me using time.Sub to know what is wrong.
+
