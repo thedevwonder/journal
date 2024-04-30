@@ -2,6 +2,10 @@
     title: CHANGELOG
 ---
 
+### 24.4.30
+  1. Learning Probability is hard, preparing for the coming end semesters for this course to get a grip around its application.
+  2. Been checking out Y combinator application, thinking of some ideas to execute and thinking of writing some open source proposals.
+
 ### 24.4.24
   1. Rewritten benchmarks to run on tls decryption only and remove other processes.
   2. Completed another unit of MIT 6.431x: Probability.
