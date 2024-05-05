@@ -30,5 +30,9 @@ Hello there, I'm Yashasva. Through documentation I wish to expand this space. An
   - [notebook](/tech/notebook) - learnings in a nutshell
   - [CHANGELOG.md](/tech/CHANGELOG) - my daily tech updates
 
+### Personal
+
+  - [Letters to myself](/me/notes) - Making sense of everything.
+
 
 

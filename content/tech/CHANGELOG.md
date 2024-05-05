@@ -2,6 +2,12 @@
     title: CHANGELOG
 ---
 
+### 24.5.5
+  1. I've put a rest on benchmarking SSL, I will post the benchmarks as of now.
+  2. I have some progress on completing Probability, it will be helpful for modelling social issues.
+  3. Started fly.io distributed systems challenge. [link](https://fly.io/dist-sys/1/)
+  4. Started researching on AR, have been checking out meta reality labs and Spark Studio scripting documentation.
+
 ### 24.4.30
   1. Learning Probability is hard, preparing for the coming end semesters for this course to get a grip around its application.
   2. Been checking out Y combinator application, thinking of some ideas to execute and thinking of writing some open source proposals.

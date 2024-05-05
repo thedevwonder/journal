@@ -1,11 +1,10 @@
 ---
     title: Benchmarking SSL Terminator
-    draft: true
 ---
 
 The benchmark of SSL Terminator will depend on TLS overhead, and so in this article we will perform tests on TLS performance and try to run benchmarks. SSL/TLS termination can act as a reverse proxy, and offload the SSL/TLS decryption process from the server. I wrote a simple code in go that terminates SSL and passes the request to the main server.
 
-SSL Performance is benchmarked on Handshakes/sec and tps [[1](https://www.haproxy.com/blog/benchmarking-ssl-performance)]. As per [[2](https://www.imperialviolet.org/2010/06/25/overclocking-ssl.html)], SSL/TLS accounts for less than 1% of the CPU load, less than 10KB of memory per connection and less than 2% of network overhead. It seems pretty more impressive that there are multiple performance optimization techniques today which further reduces tls overhead.
+SSL Performance is benchmarked on Handshakes/sec and tps [[1](https://www.haproxy.com/blog/benchmarking-ssl-performance)]. As per [[2](https://www.imperialviolet.org/2010/06/25/overclocking-ssl.html)], SSL/TLS accounts for less than 1% of the CPU load, less than 10KB of memory per connection and less than 2% of network overhead. It seems pretty more impressive that there are multiple performance optimization techniques today which further reduces tls overhead. 
 
 As per the openssl benchmarks for ecdsa,
 
@@ -75,4 +74,7 @@ Let's look at the benchmarks from the official go benchmarks [[https://go-review
     HandshakeServer/ECDHE-P521-ECDSA-P521-4    19.8ms ± 1%
 ```
 This suggests something is wrong, our time calculated for Handshake is 5-6x slower. What I want to do next is isolate the Handshake function and let Go do the benchmarking instead of me using time.Sub to know what is wrong.
+What I've found is `listener.Aceept()` function takes much of the time mentioned, however, `Handshake()` function does not take that much time
+
+For this I have been studying the [https://go.dev/src/crypto/tls/handshake_server_test.go](https://go.dev/src/crypto/tls/handshake_server_test.go) file. Will post a complete analysis of this and add some of my own testing on a later blog.
 
